@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Charge It</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=1.0, user-scalable=no"/>
+    <!-- <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /> -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link rel="stylesheet" href="style.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+      <script src="/socket.io/socket.io.js"></script>
+      <script src="java.js"></script>
+  </head>
+  <body>
+    <div id="popup" style="display: none;">
+      <h1 id="ChargedAlert">Your Smartphone has been Charged <br> Kindly Remove</h1>
+    </div>
+    <div id="MainPage">
+      <p class="welcome-passage">Elextrify Welcomes you to use our<br>Smartphone Charging Machine at</p>
+        <h1 id="title">AED 2 for 10 Minutes</h1>
+      <button onclick="port()" target="_self" id="entry"><span class="material-icons title-logo">bolt</span>LETS CHARGE</button>
+    </div>
+    <div id="NFCTapInstruction" style="display: none;">
+      <span class="material-icons home-but" onclick="home();clearTimeout(nfctimeout);">home</span>
+      <img src="Nol Logo.png" id="nfc-nol">
+    </div>
+    <div id="PortSelection" style="display: none;">
+      <span class="material-icons home-but" onclick="home()">home</span>
+      <h1 id="port-title">Please Select Your Port</h1>
+      <div id="port-wrap">
+        <br><br><br><br>
+        <div id="PortEdit">
+          <button class="port-but" disabled onclick="brand(1)">1</button>
+          <button class="port-but" onclick="brand(2)">2</button>
+          <button class="port-but" onclick="brand(3)">3</button>
+        </div>
+      </div>
+    </div>
+    <div id="BrandSelection" style="display: none;">
+      <span class="material-icons home-but" onclick="port()">arrow_back_ios</span>
+      <h1 id="port-title">Please Select Your Brand</h1>
+      <div id="brand-wrap"><br><br>
+        <button id="samsung-btn" class="brand-btn" onclick="nfc(1)"></button>
+        <button id="iphone-btn" class="brand-btn" onclick="nfc(2)"></button>
+        <button id="huawei-btn" class="brand-btn" onclick="nfc(3)"></button>
+        <br><br><br>
+        <button id="xiaomi-btn" class="brand-btn" onclick="nfc(4)"></button>
+        <button id="oppo-btn" class="brand-btn" onclick="nfc(5)"></button>
+        <button id="vivo-btn" class="brand-btn" onclick="nfc(6)"></button>
+      </div>
+      <button id="micro-usb-btn" class="micro-brand-btn" onclick="nfc(3)"></button>
+    </div>
+    <div id="CableDropWaitInstruction" style="display: none;margin-top: 150px;">
+      <h1 class="cable-thin">PLEASE WAIT FOR</h1>
+      <h1 class="cable-bold">CABLE DROP DOWN</h1>
+    </div>
+    <div id="LeavePhoneDownInstruction" style="display: none;margin-top: 150px;">
+      <h1 class="cable-thin phone-h1">PLEASE PLACE YOUR</h1>
+      <h1 class="cable-thin phone-h1">PHONE INSIDE YOUR SOCKET &</h1>
+      <h1 class="cable-bold phone-h1">CONNECT YOUR CHARGER</h1>
+      <img src="PhoneInsideBox.gif" id="phone-img">
+    </div>
+    <div id="HappyChargingMessage" style="display: none;">
+      <h1><span class="material-icons HappyBolt">bolt</span></h1>
+      <h1 class="cable-thin">HAPPY CHARGING</h1>
+      <h1 class="cable-bold">WITH US</h1>
+    </div>
+    <div class="time-wrap">
+      <h1 id="timer-0">00:00</h1>
+      <h1 id="timer-1">00:00</h1>
+      <h1 id="timer-2">00:00</h1>
+    </div>
+  </body>
+</html>
+<!-- http://localhost:3003/index.html -->
+

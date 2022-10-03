@@ -1,22 +1,18 @@
 {
-  "name": "starter-express-api",
+  "name": "smart-charger",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Website for Smart Charger Machine installed Dubai Bus Stand",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node app"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cyclic-software/starter-express-api.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cyclic-software/starter-express-api/issues"
-  },
-  "homepage": "https://github.com/cyclic-software/starter-express-api#readme",
+  "author": "Sarvin R",
+  "license": "MIT",
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.18.1",
+    "socket.io": "^4.5.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
